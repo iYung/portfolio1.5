@@ -40,6 +40,7 @@ class Achievements extends Component {
     
     render(){ return(
         <Modal trigger={this.props.trigger}>
+            <Segment.Group>
             <Segment textAlign={"center"}>
                 <h2>Achievements</h2>
                 <Menu pointing secondary stackable>
@@ -51,6 +52,7 @@ class Achievements extends Component {
             {this.state.achievements.map(achievement =>
                 <Achievement key={achievement._id} identifier={achievement._id} name={achievement.name} date={achievement.date} txt={achievement.text}/>
             )}
+        </Segment.Group>
         </Modal>
     )}
 }
