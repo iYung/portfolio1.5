@@ -1,19 +1,29 @@
 {
-  "name": "portfolio-2",
+  "name": "workspace",
   "version": "1.0.0",
-  "description": "a redo of my first portfolio",
-  "main": "index.js",
+  "description": "",
+  "main": "server.js",
   "scripts": {
+    "start": "concurrently \"node server.js\" \"cd client && npm start\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iYung/portfolio2.git"
+    "url": "git+https://github.com/iYung/portfolio.git"
   },
-  "author": "",
+  "author": "iYung",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/iYung/portfolio2/issues"
+    "url": "https://github.com/iYung/portfolio/issues"
   },
-  "homepage": "https://github.com/iYung/portfolio2#readme"
+  "homepage": "https://github.com/iYung/portfolio#readme",
+  "devDependencies": {
+    "concurrently": "^3.5.0"
+  },
+  "dependencies": {
+    "bcrypt": "^1.0.2",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "mongoose": "^4.10.8"
+  }
 }
