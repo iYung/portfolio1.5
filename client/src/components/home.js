@@ -51,21 +51,21 @@ class Home extends Component {
   render(){ 
     
     return (
-      <div id="content">
+      <Segment basic compact textAlign="center" id="content">
         {this.state.homes.map(home =>
           <div key={home._id}>
-            <Segment id="header">
+            <Segment id="header" compact>
               <p><Image bordered shape={"circular"} centered={true} size={"small"} src={home.image} alt="me"></Image></p>
               <p><Segment basic>
                 <h2>{home.title}</h2>
                 <p id="textSegment">{home.text}</p>
               </Segment>
               </p>
-              <Menu inverted compact>
-                <Edu trigger={<Menu.Item>Education</Menu.Item>} />
-                <Exp trigger={<Menu.Item>Experience</Menu.Item>} />
-                <Projects trigger={<Menu.Item>Projects</Menu.Item>} />
-                <Achievements trigger={<Menu.Item>Achievements</Menu.Item>} />
+              <Menu inverted stackable fluid>
+                <Edu trigger={<Menu.Item><div textAlign="center">Education</div></Menu.Item>} />
+                <Exp trigger={<Menu.Item textAlign="center">Experience</Menu.Item>} />
+                <Projects trigger={<Menu.Item textAlign="center">Projects</Menu.Item>} />
+                <Achievements trigger={<Menu.Item textAlign="center">Achievements</Menu.Item>} />
               </Menu>
             </Segment>
             <Segment basic textAlign="center">
@@ -75,7 +75,7 @@ class Home extends Component {
             </Segment>
           </div>
         )}
-      </div>
+      </Segment>
     )
   }
 }

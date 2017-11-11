@@ -18,6 +18,7 @@ class App extends Component {
         res.data.forEach(function(background) {
          document.getElementById("background").style.background = "url(" + background.backgroundImg + ")";
          document.getElementById("background").style.backgroundSize = "cover";
+         document.getElementById("background").style.backgroundAttachment = "fixed";
         });
       });
   }
