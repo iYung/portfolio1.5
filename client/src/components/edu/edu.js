@@ -27,10 +27,7 @@ class Education extends Component {
   }
   
   render(){ return (
-    <Segment.Group>
-    <Segment textAlign={"center"}>
-        <h2>Education</h2>
-    </Segment>
+    <Segment.Group id="group">
       {this.state.educations.map(education =>
         <Entry key={education._id} position={education.name} date={education.date} txt={education.text}/>
       )}
@@ -39,7 +36,8 @@ class Education extends Component {
 }
 
 class Edu extends Component {
-  render(){ return (<Modal trigger={this.props.trigger}>
+  render(){ return (<Modal closeIcon={true} trigger={this.props.trigger}>
+    <Modal.Header>Education</Modal.Header>
     <Education /> 
   </Modal>
   )}

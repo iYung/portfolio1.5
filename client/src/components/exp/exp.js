@@ -27,10 +27,7 @@ class Experience extends Component {
   }
   
   render(){ return (
-    <Segment.Group>
-    <Segment textAlign={"center"}>
-        <h2>Experience</h2>
-    </Segment>
+    <Segment.Group id="group">
       {this.state.experiences.map(experience =>
         <Entry key={experience._id} position={experience.name} date={experience.date} txt={experience.text}/>
       )}
@@ -39,7 +36,8 @@ class Experience extends Component {
 }
 
 class Exp extends Component {
-  render(){ return (<Modal trigger={this.props.trigger}>
+  render(){ return (<Modal closeIcon={true} trigger={this.props.trigger}>
+    <Modal.Header>Experience</Modal.Header>
     <Experience /> 
   </Modal>
   )}

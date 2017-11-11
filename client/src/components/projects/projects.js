@@ -63,10 +63,10 @@ class Projects extends Component {
     handleItemClick = (e, { name }) => {this.setState({ activeItem: name }, this.getPosts)}
     
     render(){ return(
-        <Modal trigger={this.props.trigger}>
-        <Segment.Group>
+        <Modal closeIcon={true} trigger={this.props.trigger}>
+        <Modal.Header>Projects</Modal.Header>
+        <Segment.Group id="group">
             <Segment textAlign={"center"}>
-                <h2>Projects</h2>
                 <Menu pointing secondary stackable>
                     {this.state.years.concat().sort((a, b) => b - a).map(year =>
                         <Menu.Item key={year} name={year} active={this.state.activeItem === String(year)} onClick={this.handleItemClick}/>
