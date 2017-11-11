@@ -344,6 +344,9 @@ router.route('/home')
                 return res.send(err);
             if (home == null) {
                 var newHome = new Home();
+                newHome.email = req.body.email;
+                newHome.linkedIn = req.body.linkedIn;
+                newHome.github = req.body.github;
                 newHome.title = req.body.title;
                 newHome.image = req.body.image;
                 newHome.text = req.body.text;
@@ -364,6 +367,9 @@ router.route('/home')
             if (home == null){
                 return res.send("Homepage data not found.");
             } else {  
+                home.email = req.body.email;
+                home.linkedIn = req.body.linkedIn;
+                home.github = req.body.github;
                 home.title = req.body.title;
                 home.image = req.body.image;
                 home.text = req.body.text;

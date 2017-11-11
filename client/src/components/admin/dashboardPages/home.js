@@ -11,7 +11,10 @@ class HomeData extends Component {
         const image = document.getElementById("homeImage").value;
         const title = document.getElementById("homeTitle").value;
         const txt = document.getElementById("homeTxt").value;
-        Axios.put('/api/home', Qs.stringify({ 'image': image, 'title': title, 'text': txt, 'userPass': sessionStorage.getItem('pass') }))
+        const email = document.getElementById("homeEmail").value;
+        const linkedIn = document.getElementById("homeLinkedIn").value;
+        const github = document.getElementById("homeGithub").value;
+        Axios.put('/api/home', Qs.stringify({ 'email': email, 'linkedIn': linkedIn, 'github': github, 'image': image, 'title': title, 'text': txt, 'userPass': sessionStorage.getItem('pass') }))
             .then(res => {
             alert(res.data.message)
         });
@@ -37,6 +40,18 @@ class HomeData extends Component {
             <Form.Field>
                 <label>Text</label>
                 <textarea id={"homeTxt"} defaultValue={this.props.txt}/>
+            </Form.Field>
+            <Form.Field>
+                <label>Email</label>
+                <input id={"homeEmail"} defaultValue={this.props.email}/>
+            </Form.Field>
+            <Form.Field>
+                <label>LinkedIn</label>
+                <input id={"homeLinkedIn"} defaultValue={this.props.linkedIn}/>
+            </Form.Field>
+            <Form.Field>
+                <label>Github</label>
+                <input id={"homeGithub"} defaultValue={this.props.github}/>
             </Form.Field>
             <Label onClick={() => this.update()}>Update</Label><Label onClick={() => this.del(this.props.cb)}>Delete</Label>
         </Form>
@@ -77,7 +92,7 @@ class Home extends Component {
                 {   
                     this.state.homes.map(home => {
                         newPostBar = null;
-                        return <HomeData key={home._id} image={home.image} title={home.title} txt={home.text} cb={this.getPosts}/>
+                        return <HomeData key={home._id} image={home.image} title={home.title} txt={home.text} email={home.email} github={home.github} linkedIn={home.linkedIn} cb={this.getPosts}/>
                     }
                 )}
                 {newPostBar}
