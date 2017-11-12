@@ -61,7 +61,7 @@ class Home extends Component {
                 <p id="textSegment">{home.text}</p>
               </Segment>
               </p>
-              <Menu inverted stackable fluid>
+              <Menu inverted stackable fluid widths={4}>
                 <Edu trigger={<Menu.Item><div textAlign="center">Education</div></Menu.Item>} />
                 <Exp trigger={<Menu.Item textAlign="center">Experience</Menu.Item>} />
                 <Projects trigger={<Menu.Item textAlign="center">Projects</Menu.Item>} />
