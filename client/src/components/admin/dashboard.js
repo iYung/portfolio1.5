@@ -11,9 +11,11 @@ import Exp from './dashboardPages/experience'
 import Background from './dashboardPages/background'
 import User from './dashboardPages/user'
 
+import './dashboard.css'
+
 class Dashboard extends Component { 
   render(){ return(
-    <div>
+    <div id="dashboardContainer">
       <Route exact path="/admin" render={() => ( <Redirect to="/admin/home"/>)}/>
       <Route path="/admin/home" component={Home}/>
       <Route path="/admin/edu" component={Edu}/>
