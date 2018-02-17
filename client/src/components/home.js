@@ -26,7 +26,7 @@ class Home extends Component {
   
   checkEmail(email){
     if (email !== ""){ 
-      return (<a href={"mailto:" + email} target="_blank"><Image spaced src="http://astridsofficial.com/wp-content/themes/artist-lyric/img/astrid_signup.png" inline={true} size={"mini"} /></a>) 
+      return (<a href={"mailto:" + email} target="_blank"><Image spaced src="https://upload.wikimedia.org/wikipedia/commons/0/08/Ic_mail_outline_black_48px.svg" inline={true} size={"mini"} /></a>) 
     } else { 
       return ""
     }
@@ -34,7 +34,7 @@ class Home extends Component {
   
   checkLinkedIn(linkedIn){
     if (linkedIn !== ""){ 
-      return (<a href={linkedIn} target="_blank"><Image spaced src="http://pngimages.net/sites/default/files/linkedin-logo-png-image-75824.png" inline={true} size={"mini"} /></a>) 
+      return (<a href={linkedIn} target="_blank"><Image spaced src="https://upload.wikimedia.org/wikipedia/commons/8/8f/LinkedIn_font_awesome.svg" inline={true} size={"mini"} /></a>) 
     } else { 
       return ""
     }
@@ -42,7 +42,7 @@ class Home extends Component {
   
   checkGithub(github){
     if (github !== ""){ 
-      return (<a href={github} target="_blank"><Image spaced src="https://image.flaticon.com/icons/svg/37/37819.svg" inline={true} size={"mini"} /></a>) 
+      return (<a href={github} target="_blank"><Image spaced src="https://upload.wikimedia.org/wikipedia/commons/1/19/Feather-logos-github.svg" inline={true} size={"mini"} /></a>) 
     } else { 
       return ""
     }
