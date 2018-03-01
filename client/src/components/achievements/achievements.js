@@ -49,9 +49,11 @@ class Achievements extends Component {
                     )}
                 </Menu>
             </Segment>
+            <Segment.Group id="group">
             {this.state.achievements.map(achievement =>
                 <Achievement key={achievement._id} identifier={achievement._id} name={achievement.name} date={achievement.date} txt={achievement.text}/>
             )}
+            </Segment.Group>
         </Segment.Group>
         </Modal>
     )}
