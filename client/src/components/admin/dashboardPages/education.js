@@ -64,7 +64,7 @@ class Education extends Component {
     
     getPosts(){
         Axios.get('/api/education/').then(res => {
-            const educations = res.data;
+            const educations = res.data.reverse();
             this.setState({ educations: educations });
         });
     }

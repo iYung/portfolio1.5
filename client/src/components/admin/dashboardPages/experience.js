@@ -64,7 +64,7 @@ class Experience extends Component {
     
     getPosts(){
         Axios.get('/api/experience/').then(res => {
-            const experiences = res.data;
+            const experiences = res.data.reverse();
             this.setState({ experiences: experiences });
         });
     }

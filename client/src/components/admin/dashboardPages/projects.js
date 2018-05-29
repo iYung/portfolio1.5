@@ -46,7 +46,7 @@ class Project extends Component {
                 <textarea id={this.props.identifier + "txt"} defaultValue={this.props.txt}/>
             </Form.Field>
             <Form.Field>
-                <label>Devpost Link</label>
+                <label>Project Link</label>
                 <input id={this.props.identifier + "devpost"} defaultValue={this.props.devpost}/>
             </Form.Field>
             <Form.Field>
@@ -80,7 +80,7 @@ class Projects extends Component {
     
     getPosts(){
         Axios.get('/api/projects/' + this.state.activeItem).then(res => {
-            const projects = res.data;
+            const projects = res.data.reverse();
             this.setState({ projects: projects });
         });
     }

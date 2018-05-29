@@ -65,7 +65,7 @@ class Achievements extends Component {
     
     getPosts(){
         Axios.get('/api/achievements/' + this.state.activeItem).then(res => {
-            const achievements = res.data;
+            const achievements = res.data.reverse();
             this.setState({ achievements: achievements });
         });
     }

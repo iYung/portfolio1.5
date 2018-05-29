@@ -21,7 +21,7 @@ class Experience extends Component {
   componentDidMount() {
     Axios.get('/api/experience')
       .then(res => {
-        const experiences = res.data;
+        const experiences = res.data.reverse();
         this.setState({ experiences });
       });
   }

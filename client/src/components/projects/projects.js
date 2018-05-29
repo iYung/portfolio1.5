@@ -15,7 +15,7 @@ class Project extends Component {
     let devpost = null;  
     if (this.props.devpost !== "") {
       linksLabel = <b>Links:</b>;
-      devpost = <a href={this.props.devpost} target="_blank"><Image spaced id="project-link-logo" src="https://nealrs.github.io/devpost-follow-button/icon/devpost.svg" inline={true} size={"mini"} /></a>;
+      devpost = <a href={this.props.devpost} target="_blank"><Image spaced id="project-link-logo" src="https://upload.wikimedia.org/wikipedia/commons/6/6a/External_link_font_awesome.svg" inline={true} size={"mini"} /></a>;
     }
     let image = null;
     if (this.props.img !== "") {
@@ -49,7 +49,7 @@ class Projects extends Component {
     
     getPosts(){
         Axios.get('/api/projects/' + this.state.activeItem).then(res => {
-            const projects = res.data;
+            const projects = res.data.reverse();
             this.setState({ projects: projects });
         });
     }
