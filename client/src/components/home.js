@@ -50,7 +50,7 @@ class Home extends Component {
   
   checkResume(resume){
     if (resume !== ""){ 
-      return (<a href={resume} target="_blank"><Image spaced src="http://cdn.onlinewebfonts.com/svg/img_542830.svg" inline={true} size={"mini"} /></a>) 
+      return (<a href={resume} target="_blank"><Image spaced src="https://cdn.onlinewebfonts.com/svg/img_542830.svg" inline={true} size={"mini"} /></a>) 
     } else { 
       return ""
     }
@@ -77,10 +77,10 @@ class Home extends Component {
               </Menu>
             </Segment>
             <Segment basic textAlign="center">
+              { this.checkResume(home.resume) }
               { this.checkEmail(home.email) }
               { this.checkLinkedIn(home.linkedIn) }
               { this.checkGithub(home.github) }
-              { this.checkResume(home.resume) }
             </Segment>
           </div>
         )}
