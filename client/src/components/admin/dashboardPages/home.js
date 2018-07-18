@@ -97,7 +97,7 @@ class Home extends Component {
                 {   
                     this.state.homes.map(home => {
                         newPostBar = null;
-                        return <HomeData key={home._id} image={home.image} title={home.title} txt={home.text} email={home.email} github={home.github} linkedIn={home.linkedIn} cb={this.getPosts}/>
+                        return <HomeData key={home._id} image={home.image} title={home.title} txt={home.text} email={home.email} resume={home.resume} github={home.github} linkedIn={home.linkedIn} cb={this.getPosts}/>
                     }
                 )}
                 {newPostBar}
