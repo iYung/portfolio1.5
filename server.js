@@ -348,6 +348,7 @@ router.route('/home')
                 newHome.email = req.body.email;
                 newHome.linkedIn = req.body.linkedIn;
                 newHome.github = req.body.github;
+                newHome.resume = req.body.resume;
                 newHome.title = req.body.title;
                 newHome.image = req.body.image;
                 newHome.text = req.body.text;
@@ -372,6 +373,7 @@ router.route('/home')
                 home.linkedIn = req.body.linkedIn;
                 home.github = req.body.github;
                 home.title = req.body.title;
+                home.resume = req.body.resume;
                 home.image = req.body.image;
                 home.text = req.body.text;
                 home.save(function(err) {

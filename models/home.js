@@ -7,7 +7,8 @@ var HomeSchema   = new Schema({
     text: String,
     email: String,
     linkedIn: String,
-    github: String
+    github: String,
+    resume: String
 });
 
 module.exports = mongoose.model('Home', HomeSchema);

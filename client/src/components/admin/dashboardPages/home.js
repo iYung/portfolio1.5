@@ -8,13 +8,14 @@ import Nav from './nav';
 class HomeData extends Component { 
   
     update(){
+        const resume = document.getElementById("homeResume").value;
         const image = document.getElementById("homeImage").value;
         const title = document.getElementById("homeTitle").value;
         const txt = document.getElementById("homeTxt").value;
         const email = document.getElementById("homeEmail").value;
         const linkedIn = document.getElementById("homeLinkedIn").value;
         const github = document.getElementById("homeGithub").value;
-        Axios.put('/api/home', Qs.stringify({ 'email': email, 'linkedIn': linkedIn, 'github': github, 'image': image, 'title': title, 'text': txt, 'userPass': sessionStorage.getItem('pass') }))
+        Axios.put('/api/home', Qs.stringify({ 'resume': resume, 'email': email, 'linkedIn': linkedIn, 'github': github, 'image': image, 'title': title, 'text': txt, 'userPass': sessionStorage.getItem('pass') }))
             .then(res => {
             alert(res.data.message)
         });
@@ -40,6 +41,10 @@ class HomeData extends Component {
             <Form.Field>
                 <label>Text</label>
                 <textarea id={"homeTxt"} defaultValue={this.props.txt}/>
+            </Form.Field>
+            <Form.Field>
+                <label>Resume</label>
+                <input id={"homeResume"} defaultValue={this.props.resume}/>
             </Form.Field>
             <Form.Field>
                 <label>Email</label>

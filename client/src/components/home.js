@@ -48,6 +48,14 @@ class Home extends Component {
     }
   }
   
+  checkResume(resume){
+    if (resume !== ""){ 
+      return (<a href={resume} target="_blank"><Image spaced src="http://cdn.onlinewebfonts.com/svg/img_542830.svg" inline={true} size={"mini"} /></a>) 
+    } else { 
+      return ""
+    }
+  }
+  
   render(){ 
     
     return (
@@ -72,6 +80,7 @@ class Home extends Component {
               { this.checkEmail(home.email) }
               { this.checkLinkedIn(home.linkedIn) }
               { this.checkGithub(home.github) }
+              { this.checkResume(home.resume) }
             </Segment>
           </div>
         )}
