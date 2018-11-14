@@ -49,7 +49,7 @@ class Projects extends Component {
     
     getPosts(){
         Axios.get('/api/projects/' + this.state.activeItem).then(res => {
-            const projects = res.data.sort((a,b) => new Date(b.date + ' ' + b.year) - new Date(a.date + ' ' + a.year));
+            const projects = res.data.sort((a,b) => new Date(a.date + ' ' + a.year) - new Date(b.date + ' ' + b.year));
             this.setState({ projects: projects });
         });
     }
