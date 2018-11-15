@@ -22,7 +22,7 @@ var port;
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
     app.use('/admin',express.static('client/build'));
-    port = process.env.SERVERPORT;
+    port = process.env.PORT;
 } else {
     port = 8080;
 }
