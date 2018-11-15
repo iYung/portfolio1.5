@@ -15,14 +15,14 @@ var Background = require('./models/background');
 mongoose.connect(process.env.DB,{useMongoClient: true});
 
 //bCrypt setup
-const saltRounds = process.env.SALTROUNDS;
+const saltRounds = parseInt(process.env.SALTROUNDS);
 
 var port;
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
     app.use('/admin',express.static('client/build'));
-    port = process.env.PORT;
+    port = process.env.SERVERPORT;
 } else {
     port = 8080;
 }
