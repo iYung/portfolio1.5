@@ -11,21 +11,20 @@ var Project = require('./models/project');
 var Education = require('./models/education');
 var Experience = require('./models/experience');
 var Background = require('./models/background');
-var config = require('./config');
 
-mongoose.connect(config.database,{useMongoClient: true});
+mongoose.connect(process.env.DB,{useMongoClient: true});
 
 //bCrypt setup
-const saltRounds = config.saltRounds;
+const saltRounds = process.env.SALTROUNDS;
 
 var port;
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
     app.use('/admin',express.static('client/build'));
-    port = process.env.PORT || config.serverPort;
+    port = process.env.PORT;
 } else {
-    port = config.serverPort;
+    port = 8080;
 }
 
 app.set("port", port);
