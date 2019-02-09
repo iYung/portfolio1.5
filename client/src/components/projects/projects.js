@@ -74,7 +74,7 @@ class Projects extends Component {
                 </Menu>
             </Segment>
             <Segment.Group id="group">
-            {this.state.projects.map(project =>
+            {this.state.projects.reverse().map(project =>
                 <Project key={project._id} name={project.name} date={project.date} txt={project.text} img={project.img} devpost={project.devpost} github={project.github}/>
             )}
             </Segment.Group>
